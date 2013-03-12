@@ -1,5 +1,6 @@
 <?php
-
+define('CURRY_DISABLE_AUTOLOAD', 1);
 $timeStart = microtime(true);
-require_once dirname(__FILE__) . '/../curry/include/Curry/Core.php';
-Curry_Core::init(dirname(__FILE__) . '/../cms/config/config.php', $timeStart);
+require __DIR__ . '/../vendor/autoload.php';
+Curry_Core::init(__DIR__ . '/../cms/config/config.php', $timeStart);
+unset($timeStart);

@@ -5,6 +5,7 @@ cms/propel/build/classes/*/om
 cms/propel/build/classes/*/map
 cms/propel/build/sql/
 curry
+vendor
 
 # Junk files created by OS
 ._*
