@@ -1,0 +1,22 @@
+# Configure php as needed
+<IfModule mod_php5.c>
+	# Disable magic quotes
+	php_flag magic_quotes_gpc Off
+</IfModule>
+
+# Setup URL rewriting using mod_rewrite
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+	# if this request is (-s regular file with size, -l symbolic link, -d directory)
+	RewriteCond %{REQUEST_URI} ^/(robots\.txt|favicon\.ico|apple-touch-icon\.png)$ [OR]
+	RewriteCond %{REQUEST_FILENAME} -s [OR]
+	RewriteCond %{REQUEST_FILENAME} -l [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	
+	# ... then skip substitution (NC = nocase, L = last)
+	RewriteRule ^.*$ - [NC,L]
+	
+	# else rewrite everything to index.php
+	RewriteRule ^.*$ /index.php [NC,L]
+</IfModule>

@@ -1,0 +1,13 @@
+#!/bin/sh
+# Shell wrapper for Propel generator
+
+CURRYROOT=$(cd $(dirname "$0")"/../../curry"; pwd)
+PROPELGEN=$CURRYROOT/vendor/bin/propel-gen
+
+export PHP_COMMAND=/usr/bin/php
+export PHING_HOME=${CURRYROOT}/vendor/phing/phing
+export PHP_CLASSPATH=${CURRYROOT}/include:${PHING_HOME}/classes
+export PATH=${PATH}:${PHING_HOME}/bin
+
+$PROPELGEN $*
+
