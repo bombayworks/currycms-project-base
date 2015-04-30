@@ -1,19 +1,24 @@
 {
-    "name": "bombayworks/currycms-project-base",
-    "description": "Standard project template for Curry CMS",
-    "type": "project",
-    "license": "GPL-3.0+",
-    "autoload": {
-        "psr-0": { "": "cms/include/" }
-    },
-    "require": {
-        "php": ">=5.3.7",
-        "bombayworks/currycms": "1.1.*",
-        "oyatel/minify": "@dev"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.1-dev"
-        }
+  "name": "bombayworks/currycms-project-base",
+  "description": "Standard project template for Curry CMS",
+  "type": "project",
+  "license": "GPL-3.0+",
+  "autoload": {
+    "psr-0": {"": "cms/include/"}
+  },
+  "require": {
+    "bombayworks/currycms": "~2.0"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"copy('cms/config/config.sample.php', 'cms/config/config.php');\"",
+      "php -r \"copy('cms/config/propel.sample.xml', 'cms/config/propel.xml');\"",
+      "php -r \"copy('vendor/bombayworks/currycms/propel/core.schema.xml', 'cms/propel/core.schema.xml');\""
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev"
     }
+  }
 }

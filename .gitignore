@@ -1,11 +1,13 @@
 # Project files
 cms/data/*
-cms/config/
+cms/config/config.php
+cms/config/propel.xml
+cms/config/propel.php
+cms/config/propel-classmap.php
 cms/propel/build/classes/*/om
 cms/propel/build/classes/*/map
 cms/propel/build/sql/
-curry
-vendor
+/vendor
 
 # Junk files created by OS
 ._*
