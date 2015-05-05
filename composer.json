@@ -7,7 +7,7 @@
     "psr-0": {"": "cms/include/"}
   },
   "require": {
-    "bombayworks/currycms": "~2.0"
+    "bombayworks/currycms": "~2.0@dev"
   },
   "scripts": {
     "post-create-project-cmd": [
